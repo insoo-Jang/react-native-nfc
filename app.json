@@ -1,0 +1,12 @@
+{
+  "name": "react-native-nfc",
+  "displayName": "react-native-nfc",
+  "expo": {
+    "name": "react-native-nfc",
+    "slug": "react-native-nfc",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
