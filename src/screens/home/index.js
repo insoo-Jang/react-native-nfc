@@ -30,8 +30,13 @@ const HomeScreen = (props) => {
             </S_TitleView>
             <Button
                 buttonStyle={{ height: 50, marginHorizontal: 25 }}
-                onPress={() => {
-                    navigation.navigate('TagDetail')
+                onPress={async () => {
+                    const tag = await NFCProxy.readTag()
+                    if (tag) {
+                        navigation.navigate('TagDetail', { tag })
+                    } else {
+                        console.log('Fail Read Tag')
+                    }
                 }}
                 title="Connect"
             />

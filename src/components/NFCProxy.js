@@ -44,9 +44,27 @@ const withAndroidPrompt = (fn) => {
     return wrapper
 }
 
+const readTag = withAndroidPrompt(async () => {
+    let tag = null
+    try {
+        await NfcManager.requestTechnology([NfcTech.Ndef])
+        tag = await NfcManager.getTag()
+
+        tag.ndefStatus = await NfcManager.ndefHandler.getNdefStatus()
+        if (Platform.OS === 'ios') {
+            await NfcManager.setAlertMessageIOS('Success')
+        }
+    } catch (ex) {
+        // for tag reading, we don't actually need to show any error
+    } finally {
+        NfcManager.cancelTechnologyRequest()
+    }
+
+    return tag
+})
+
 const init = async () => {
     const supported = await NfcManager.isSupported()
-    console.log(supported, 'test')
     if (supported) {
         await NfcManager.start()
     }
@@ -57,4 +75,4 @@ const isEnabled = async () => {
     return NfcManager.isEnabled()
 }
 
-export { init, isEnabled }
+export { init, isEnabled, readTag }
