@@ -650,12 +650,14 @@ ehthumbs_vista.db
 
 # Folder config file
 [Dd]esktop.ini
+.expo/
+web-build/
 
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
 # Windows Installer files
-*.cab
+*.cab.expo/
 *.msi
 *.msix
 *.msm
@@ -665,7 +667,10 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/node,macos,windows,eclipse,webstorm,jetbrains,reactnative,cocoapods
-Pods/
 /android/.idea/
 /android/build/
+# CocoaPods
 /ios/Pods/
+# Bundle artifacts
+*.jsbundle
+/android/app/src/debug/
