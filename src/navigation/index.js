@@ -39,17 +39,16 @@ const BottomTabNavigation = () => {
             tabBarPosition={'bottom'}
         >
             <BottomTabStack.Screen name={SCREEN.Nfc} component={HomeTab} />
-
-            {/*<BottomTabStack.Screen*/}
-            {/*    name={SCREEN.Bluetooth}*/}
-            {/*    component={BluetoothTab}*/}
-            {/*/>*/}
         </BottomTabStack.Navigator>
     )
 }
 const MainNavigation = () => {
     return (
         <MainStack.Navigator>
+            <BottomTabStack.Screen
+                name={SCREEN.Bluetooth}
+                component={BluetoothTab}
+            />
             <MainStack.Screen name={SCREEN.Home} component={HomeTab} />
             <MainStack.Screen
                 name={SCREEN.TagDetail}

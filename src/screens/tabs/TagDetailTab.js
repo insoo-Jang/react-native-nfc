@@ -1,11 +1,11 @@
 import React from 'react'
 import { ScrollView, TouchableOpacity } from 'react-native'
 import TagDetailScreen from '../tagDetail'
-import { S_TagDetailTView } from './TagDetailStyle'
+import { S_TagDetailView } from './TagDetailStyle'
 
 const TagDetailTab = (props) => {
     return (
-        <S_TagDetailTView>
+        <S_TagDetailView>
             <ScrollView
                 showsVerticalScrollIndicator={false}
                 style={{ width: '100%' }}
@@ -14,7 +14,7 @@ const TagDetailTab = (props) => {
                     <TagDetailScreen {...props} />
                 </TouchableOpacity>
             </ScrollView>
-        </S_TagDetailTView>
+        </S_TagDetailView>
     )
 }
 

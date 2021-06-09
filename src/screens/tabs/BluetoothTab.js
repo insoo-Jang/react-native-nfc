@@ -1,11 +1,21 @@
 import React from 'react'
-import { Text, View } from 'react-native'
+import { ScrollView, Text, TouchableOpacity, View } from 'react-native'
+import { S_BluetoothView } from './BluetoothStyle'
+import TagDetailScreen from '../tagDetail'
+import Bluetooth from '../Bluetooth'
 
-const BluetoothTab = () => {
+const BluetoothTab = (props) => {
     return (
-        <View>
-            <Text>123</Text>
-        </View>
+        <S_BluetoothView>
+            <ScrollView
+                showsVerticalScrollIndicator={false}
+                style={{ width: '100%' }}
+            >
+                <TouchableOpacity activeOpacity={1}>
+                    <Bluetooth />
+                </TouchableOpacity>
+            </ScrollView>
+        </S_BluetoothView>
     )
 }
 
